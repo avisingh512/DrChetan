@@ -9,6 +9,9 @@ function Contact() {
     email: '',
     message: ''
   });
+
+  const API_URL = process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:3001';
+
   const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
@@ -23,7 +26,7 @@ function Contact() {
     setSubmitStatus('submitting');
 
     try {
-      const response = await fetch('http://localhost:3001/api/submit-form', {
+      const response = await fetch(`${API_URL}/submit-form`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

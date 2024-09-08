@@ -1,5 +1,6 @@
 // server.js
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
 const nodemailer = require('nodemailer');
@@ -8,6 +9,11 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+});
+
 
 // Set up SQLite database
 const db = new sqlite3.Database('./contacts.db', (err) => {

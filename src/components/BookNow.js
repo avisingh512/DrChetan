@@ -11,6 +11,7 @@ function BookNow() {
     time: ''
   });
   const [submitStatus, setSubmitStatus] = useState(null);
+  const API_URL = process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:3001';
 
   const handleChange = (e) => {
     setFormData({
@@ -24,7 +25,7 @@ function BookNow() {
     setSubmitStatus('submitting');
 
     try {
-      const response = await fetch('http://localhost:3001/api/book-now', {
+      const response = await fetch(`${API_URL}/book-now`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
