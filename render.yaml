@@ -14,7 +14,4 @@ services:
     env: node
     buildCommand: cd backend && npm install
     startCommand: cd backend && node server.js
-    routes:
-      - type: rewrite
-        source: /api/*
-        destination: /api/$1
+    # Remove the routes section for the backend service
