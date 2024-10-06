@@ -1,0 +1,44 @@
+/* src/components/BookNow.css */
+#booknow {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .booknow-content h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .booknow-content form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 15px;
+  }
+  
+  .booknow-content label {
+    font-size: 16px;
+    display: block;
+  }
+  
+  .booknow-content input,
+  .booknow-content button {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .booknow-content button {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .booknow-content button:hover {
+    background-color: #2980b9;
+  }
+  
